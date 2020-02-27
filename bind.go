@@ -72,7 +72,7 @@ func bindConfig(configMap map[string]string, result interface{}) error {
 				}
 			case reflect.String:
 				for _, e := range strArray {
-					valArray = append(valArray, reflect.ValueOf(e).Convert(elemType))
+					valArray = append(valArray, reflect.ValueOf(strings.Trim(e, "\"")).Convert(elemType))
 				}
 			}
 
